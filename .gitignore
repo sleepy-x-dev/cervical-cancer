@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+
+# Model weights
+*.pth
+
+# Dataset
+.cache/
+datasets/
+data/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
