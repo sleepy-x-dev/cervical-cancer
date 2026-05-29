@@ -53,13 +53,13 @@ class CervicalDataset(Dataset):
     def _map_to_binary(self, folder_name):
         if self.dataset_type == 'sipakmed':
             normal_classes = ['parabasal', 'superficial-intermediate', 'im_parabasal', 'im_superficial-intermediate']
-            abnormal_classes = ['dyskeratotic', 'koilocytotic', 'metaplastic', 'im_dyskeratotic', 'im_koilocytotic', 'im_metaplastic']
+            abnormal_classes = ['dyskeratotic', 'koilocytotic', 'metaplastic', 'im_dyskeratotic', 'im_koilocytotic']
             
             if any(c in folder_name for c in normal_classes): return 0
             if any(c in folder_name for c in abnormal_classes): return 1
             
         elif self.dataset_type == 'herlev':
-            normal_classes = ['normal_superficial', 'normal_intermediate', 'normal_columnar']
+            normal_classes = ['normal_superficial', 'normal_intermediate', 'normal_columnar', 'im_metaplastic']
             abnormal_classes = ['light_dysplastic', 'moderate_dysplastic', 'severe_dysplastic', 'carcinoma_in_situ']
             
             if any(c in folder_name for c in normal_classes): return 0
