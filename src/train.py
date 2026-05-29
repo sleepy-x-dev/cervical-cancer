@@ -37,7 +37,7 @@ def train_dann(model, source_loader, target_loader, num_epochs=10, device='cuda'
             #Cap the Alpha. 
             current_batch = epoch * len(source_loader) + i
             p = current_batch / total_batches
-            alpha = (2. / (1. + np.exp(-10 * p)) - 1.) * 0.1 
+            alpha = (2. / (1. + np.exp(-10 * p)) - 1.) * 0.3 
             
             # 1. Train on Source (Classification + Domain)
             class_preds_src, domain_preds_src = model(source_images, alpha=alpha)
